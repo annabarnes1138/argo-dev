@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: guestbook
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   generators:
   - git:
@@ -20,5 +22,12 @@ spec:
         path: "examples/git-generator-files-discovery/apps/guestbook"
       destination:
         server: https://kubernetes.default.svc
-        #server: '{{cluster.address}}'
-        namespace: guestbook
+        namespace: local
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: false
+        syncOptions:
+        - CreateNamespace=true
+        - PruneLast=true
