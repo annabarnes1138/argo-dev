@@ -1,0 +1,8 @@
+{
+  "appName": "test",
+  "cluster": {
+    "owner": "steven.barnes@topgolf.com",
+    "name": "argocd",
+    "address": "https://kubernetes.default.svc"
+  }
+}
