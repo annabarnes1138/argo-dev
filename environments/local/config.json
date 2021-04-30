@@ -1,5 +1,5 @@
 {
-  "appName": "newname",
+  "appName": "dumb-new-name",
   "cluster": {
     "owner": "steven.barnes@topgolf.com",
     "name": "argocd",
